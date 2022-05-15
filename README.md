@@ -1,2 +1,3 @@
-# Survey-Forms
-Survey and Form Libraries
+# SurveyFormsJS is a JavaScript Survey and Form Library
+
+SurveyFormsJS is a modern way to add surveys and forms to your website.

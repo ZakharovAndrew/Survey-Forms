@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SurveyForms.js Library Example</title><meta name="viewport" content="width=device-width"/>
+        <script type="text/javascript" src="../src/SurveyForms.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="../css/SurveyForms.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="survey-form"></div>
+
+        
+        <script>
+            var form = SurveyForms({
+                id: 'survey-form',
+                repeat: true,
+                questions : [
+                    {
+                        title : 'Test Title 1',
+                        required : true,
+                        options : ['one', 'two', 'zero']
+                    },
+                    {
+                        title : 'Test Title 2',
+                        required : false,
+                        options : ['1', '2', '3']
+                    }
+                ]
+            });
+        </script>
+    </body>
+</html>

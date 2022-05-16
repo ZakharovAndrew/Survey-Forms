@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title>SurveyForms.js Library Example</title><meta name="viewport" content="width=device-width"/>
+        <meta charset="utf-8">
         <script type="text/javascript" src="../src/SurveyForms.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link href="../css/SurveyForms.css" rel="stylesheet">
@@ -13,6 +14,7 @@
         <script>
             var form = SurveyForms({
                 id: 'survey-form',
+                background_color: '#f7fafc',
                 repeat: true,
                 questions : [
                     {
@@ -23,7 +25,15 @@
                     {
                         title : 'Test Title 2',
                         required : false,
-                        options : ['1', '2', '3']
+                        options : ['1', '2', '3'],
+                        score: 5
+                    },
+                    {
+                        title : 'Test Title 3',
+                        type: 'select',
+                        required : true,
+                        options : ['option 1', 'option 2', 'option 3'],
+                        score: 5
                     }
                 ]
             });

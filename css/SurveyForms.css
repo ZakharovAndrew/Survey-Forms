@@ -1,0 +1,12 @@
+.survey-forms .blocks, .survey-forms .form-header {
+    margin: auto;
+    max-width: 90vw;
+    width: 640px;
+}
+.survey-forms .form-header {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+}
+.survey-forms .req-query {
+    color: #d93025;
+}

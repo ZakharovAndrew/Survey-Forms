@@ -3,5 +3,16 @@
  * @author Zakharov Andrew https://github.com/ZakharovAndrew
  */
 
- function SurveyForms() {
- }
+// Defaults
+
+var defaultSettings = {
+    title: 'Default Title',
+    description : 'Simple description. SurveyForms.js',
+    id: '',
+    questions : {},
+    autosave: true,
+    repeat: false
+};
+
+function SurveyForms(params) {
+}

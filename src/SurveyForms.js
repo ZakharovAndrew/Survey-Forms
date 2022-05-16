@@ -1,6 +1,7 @@
-/*
- * SurveyForms.js - mini JavaScript polling library
- * @author Zakharov Andrew https://github.com/ZakharovAndrew
+/*!
+ * SurveyForms.js - Survey JavaScript library v0.0.11
+ * Copyright (c) 2022 Zakharov Andrew https://github.com/ZakharovAndrew
+ * License: MIT (http://www.opensource.org/licenses/mit-license.php)
  */
 
 // Defaults
@@ -11,7 +12,7 @@ var defaultSettings = {
     id: '',
     questions : {},
     autosave: true,
-    repeat: false
+    repeat: false,
 };
 
 function SurveyForms(params) {
@@ -29,9 +30,75 @@ function SurveyForms(params) {
             throw "Element not found!";
         }
         
-        this.el = document.getElementById(this.settings.id);       
+        this.el = document.getElementById(this.settings.id);
+        this.el.className += 'survey-forms'; //support Internet Explorer 9 or lower
+        if (typeof this.settings.background_color !== 'undefined') {
+            document.getElementById(this.settings.id).style.backgroundColor = this.settings.background_color;
+        }
+        loadHeader();
+        loadSurveys();
+        loadFooter();
         
-        console.log(this.settings, this.el);
+        document.getElementById(this.settings.id + '-button').onclick = function() {
+            console.log('send JSON')
+        };
+        
+        console.log('SurveyForms.js loaded');
+    }
+    
+    /**
+     * Append head-block to form
+     */
+    function loadHeader() {
+        this.el.insertAdjacentHTML(
+            'afterbegin',
+            `<div class="form-header"><h1>${this.settings.title}</h1><div class="form-header-description">${this.settings.description}</div>`
+        );
+    }
+    
+    /**
+     * Append Surveys
+     */
+    function loadSurveys() {
+        this.settings.questions.forEach(
+            element => addSurvey(element)
+        );
+    }
+    
+    function addSurvey(survey) {
+        options = '';
+        survey.options.forEach(function(item, i) {
+                if (typeof survey.type === 'undefined' || survey.type == 'radio') {
+                    options += `<input name="survey-form-${this.cnt}" type="radio" value="${item}">${item}</p>`;
+                } else if (survey.type == 'select') {
+                    options += `<option>${item}</option>`;
+                }
+            }
+        );
+        if (survey.type == 'select') {
+            options = `<select name="survey-form-${this.cnt}">${options}</select>`;
+        }
+
+        let req = (survey.required) ? '<span class="req-survey" aria-label="Required survey"> *</span>' : '';
+        let score = (survey.score) ? survey.score + '&nbsp; points' : '';
+        
+        let html = 
+        `<div class="blocks">
+            <div class="survey-block">
+                <div class="survey-header">
+                    <div class="survey-title">${survey.title} ${req}</div>
+                    <div class="survey-score" aria-label="Max score">${score}</div>
+                </div>
+                <div class="survey-body">${options}</div>
+            </div>
+        </div>`;
+        this.el.insertAdjacentHTML('beforeend', html);
+        this.cnt++;
+    }
+    
+    function loadFooter()
+    {
+        this.el.insertAdjacentHTML('beforeend', '<div class="survey-complete-block"><button id="'+this.settings.id+'-button" class="survey-complete-btn">Complete</button></div>');
     }
     
     function loadSettings(params) {

@@ -1,0 +1,21 @@
+{
+  "name": "ZakharovAndrew/Survey-Forms",
+  "description": "JavaScript Survey and Form Library",
+  "keywords": [
+    "javascript",
+    "jquery",
+    "form",
+    "survey",
+    "poll",
+  ],
+  "homepage": "https://github.com/ZakharovAndrew/Survey-Forms",
+  "authors": [
+    {
+      "name": "Andrew Zakharov",
+      "homepage": "https://github.com/ZakharovAndrew"
+    }
+  ],
+  "license": "MIT",
+  "suggest": {
+  }
+}

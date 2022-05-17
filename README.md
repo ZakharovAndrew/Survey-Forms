@@ -2,6 +2,21 @@
 
 SurveyFormsJS is a modern way to add surveys and forms to your website.
 
+## Installation
+
+Just run
+
+```
+composer require zakharov-andrew/survey-forms
+```
+or add
+
+```
+"onmotion/yii2-survey": "*"
+```
+
+to the require section of your composer.json file.
+
 ## Example
 
 See the [source code](https://github.com/ZakharovAndrew/Survey-Forms/blob/master/examples/index.html) for more details.

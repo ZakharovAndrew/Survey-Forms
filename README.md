@@ -14,7 +14,7 @@ $ composer require zakharov-andrew/survey-forms
 or add
 
 ```
-"onmotion/yii2-survey": "*"
+"zakharov-andrew/survey-forms": "*"
 ```
 
 to the ```require``` section of your ```composer.json``` file.

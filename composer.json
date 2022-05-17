@@ -17,5 +17,6 @@
   ],
   "license": "MIT",
   "suggest": {
-  }
+  },
+  "prefer-stable": true
 }

@@ -4,10 +4,12 @@ SurveyFormsJS is a modern way to add surveys and forms to your website.
 
 ## Installation
 
-Just run
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+
+Either run
 
 ```
-composer require zakharov-andrew/survey-forms
+$ composer require zakharov-andrew/survey-forms
 ```
 or add
 
@@ -15,7 +17,7 @@ or add
 "onmotion/yii2-survey": "*"
 ```
 
-to the require section of your composer.json file.
+to the ```require``` section of your ```composer.json``` file.
 
 ## Example
 

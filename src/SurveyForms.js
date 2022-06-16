@@ -78,6 +78,9 @@ function SurveyForms(params) {
         if (survey.type == 'select') {
             options = `<select name="survey-form-${this.cnt}">${options}</select>`;
         }
+        if (survey.type == 'text') {
+            options = `<textarea name="survey-form-${this.cnt}" autofocus maxlength="500"></textarea>`;
+        }
 
         let req = (survey.required) ? '<span class="req-survey" aria-label="Required survey"> *</span>' : '';
         let score = (survey.score) ? survey.score + '&nbsp; points' : '';

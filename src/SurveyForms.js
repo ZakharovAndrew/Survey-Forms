@@ -69,7 +69,7 @@ function SurveyForms(params) {
         options = '';
         survey.options.forEach(function(item, i) {
                 if (typeof survey.type === 'undefined' || survey.type == 'radio') {
-                    options += `<input name="survey-form-${this.cnt}" type="radio" value="${item}">${item}</p>`;
+                    options += `<label><input name="survey-form-${this.cnt}" type="radio" value="${item}">${item}</label>`;
                 } else if (survey.type == 'select') {
                     options += `<option>${item}</option>`;
                 }

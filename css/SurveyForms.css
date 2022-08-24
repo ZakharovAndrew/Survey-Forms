@@ -71,3 +71,12 @@
 .survey-forms .survey-complete-btn:hover {
     background: #168ce9;
 }
+.survey-body label {
+    display:block;
+    font-weight:normal;
+    font-size: 0.9em;
+}
+
+.survey-body label input[type="radio"] {
+    margin-right:5px;
+}

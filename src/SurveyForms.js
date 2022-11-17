@@ -69,17 +69,17 @@ function SurveyForms(params) {
         options = '';
         survey.options.forEach(function(item, i) {
                 if (typeof survey.type === 'undefined' || survey.type == 'radio') {
-                    options += `<label><input name="survey-form-${this.cnt}" type="radio" value="${item}">${item}</label>`;
+                    options += `<label><input name="${survey.name}" type="radio" value="${item}">${item}</label>`;
                 } else if (survey.type == 'select') {
                     options += `<option>${item}</option>`;
                 }
             }
         );
         if (survey.type == 'select') {
-            options = `<select name="survey-form-${this.cnt}">${options}</select>`;
+            options = `<select name="${survey.name}">${options}</select>`;
         }
         if (survey.type == 'text') {
-            options = `<textarea name="survey-form-${this.cnt}" autofocus maxlength="500"></textarea>`;
+            options = `<textarea name="${survey.name}" autofocus maxlength="500"></textarea>`;
         }
 
         let req = (survey.required) ? '<span class="req-survey" aria-label="Required survey"> *</span>' : '';
